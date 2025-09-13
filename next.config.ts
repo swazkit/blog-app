@@ -2,7 +2,20 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['en.ac-illust.com', 'thumb.ac-illust.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'en.ac-illust.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'thumb.ac-illust.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
 };
 
