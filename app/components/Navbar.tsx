@@ -4,7 +4,10 @@ import { auth, signOut, signIn } from "@/auth"
 
 const Navbar = async () => {
 
+  
+
   const session = await auth();
+  console.log(session?.user?.name);
 
   return (
     <header className="px-5 py-3 bg-white text-gray-800 shadow-sm font-work-sans">
@@ -26,7 +29,7 @@ const Navbar = async () => {
                   <button type="submit" className="btn btn-neutral btn-dash rounded">Logout</button>
               </form>
 
-              <Link href={`/user/${session?.id}`}>
+              <Link href={`/user/${session?.user?.name}`}>
                 <span>{session?.user?.name}</span>
               </Link>
             </>
